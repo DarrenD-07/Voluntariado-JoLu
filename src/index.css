@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #8ecae6;
+  --color-secondary: #219ebc;
+  --color-dark: #023047;
+  --color-accent-1: #ffb703;
+  --color-accent-2: #fb8500;
+
+ 
+  --color-white: #ffffff;
+  --color-light-gray: #f8f9fa;
+  --color-text: #333333;
+
+  /* Fuente */
+  --font-bebas: "Bebas Neue", cursive;
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--font-system);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  min-height: 100vh;
+}
+
+/* Estilos para títulos con Bebas Neue */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bebas);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Estilos para botones modernos */
+.btn {
+  font-family: var(--font-bebas);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 400;
+  min-width: 120px;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-1);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(255, 183, 3, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(251, 133, 0, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(33, 158, 188, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 48, 71, 0.4);
+}
+
+/* Estilos para áreas de texto */
+.text-area {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 16px 0;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.text-area:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.text-area textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 2px solid var(--color-light-gray);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: var(--font-system);
+  font-size: 14px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.text-area textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(33, 158, 188, 0.1);
+}
+
+/* Estilos para la navegación */
+.navbar {
+  background: linear-gradient(135deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
+  padding: 16px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  font-family: var(--font-bebas);
+  font-size: 2rem;
+  color: var(--color-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para la sección "Quienes Somos" */
+.quienes-somos {
+  background: linear-gradient(135deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
+  min-height: calc(100vh - 80px);
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quienes-somos-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.quienes-somos h1 {
+  font-family: var(--font-bebas);
+  font-size: 3rem;
+  color: var(--color-dark);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.quienes-somos p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* Elementos decorativos circulares */
+.decorative-circles {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+}
+
+.circle {
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle:nth-child(1) {
+  background-color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.circle:nth-child(2) {
+  background-color: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  animation-delay: 1s;
+}
+.circle:nth-child(3) {
+  background-color: var(--color-dark);
+  width: 35px;
+  height: 35px;
+  animation-delay: 2s;
+}
+.circle:nth-child(4) {
+  background-color: var(--color-accent-1);
+  width: 45px;
+  height: 45px;
+  animation-delay: 3s;
+}
+.circle:nth-child(5) {
+  background-color: var(--color-accent-2);
+  width: 38px;
+  height: 38px;
+  animation-delay: 4s;
+}
+.circle:nth-child(6) {
+  background-color: var(--color-primary);
+  width: 42px;
+  height: 42px;
+  animation-delay: 5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .navbar-buttons {
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+    min-width: 100px;
+  }
+
+  .decorative-circles {
+    display: none;
+  }
+
+  .quienes-somos-content {
+    padding: 24px;
+  }
+
+  .quienes-somos h1 {
+    font-size: 2.5rem;
+  }
+}
