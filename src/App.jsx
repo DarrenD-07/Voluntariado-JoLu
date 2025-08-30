@@ -3,6 +3,7 @@
 import { useState } from "react"
 import "./App.css"
 import SaludMental from "./SaludMental" // Importa el nuevo componente
+import Juventud from "./Juventud" // Importa el nuevo componente
 
 function App() {
   const [fileContent, setFileContent] = useState("")
@@ -104,46 +105,9 @@ function App() {
         )}
 
         {activeSection === "salud-mental" ? <SaludMental /> : null}
+        {activeSection === "juventud" ? <Juventud /> : null}
 
-        {activeSection !== "quienes-somos" && activeSection !== "salud-mental" && (
-          <div className="content-areas fade-in">
-            {/* Área de texto 1 */}
-            <div className="text-area">
-              <h2>Área de Contenido 1</h2>
-              <textarea
-                value={fileContent}
-                onChange={(e) => setFileContent(e.target.value)}
-                placeholder="Escribe tu contenido aquí..."
-              />
-              <button className="btn btn-secondary">Procesar</button>
-            </div>
-
-            {/* Área de texto 2 */}
-            <div className="text-area">
-              <h2>Área de Respuesta</h2>
-              <textarea
-                value={responseContent}
-                onChange={(e) => setResponseContent(e.target.value)}
-                placeholder="La respuesta aparecerá aquí..."
-                readOnly
-              />
-            </div>
-
-            {/* Tabla de errores */}
-            {errorList.length > 0 && (
-              <div className="text-area">
-                <h2>Lista de Errores</h2>
-                <ul className="error-list">
-                  {errorList.map((error, index) => (
-                    <li key={index} className="error-item">
-                      {error}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        )}
+        
       </main>
     </div>
   )
