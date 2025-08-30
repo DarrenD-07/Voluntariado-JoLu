@@ -2,19 +2,16 @@
 
 import { useState } from "react"
 import "./App.css"
+import SaludMental from "./SaludMental" // Importa el nuevo componente
 
 function App() {
   const [fileContent, setFileContent] = useState("")
   const [responseContent, setResponseContent] = useState("")
   const [errorList, setErrorList] = useState([])
-  const [showQuienesSomos, setShowQuienesSomos] = useState(true)
+  const [activeSection, setActiveSection] = useState("quienes-somos")
 
   const handleNavClick = (section) => {
-    if (section === "quienes-somos") {
-      setShowQuienesSomos(true)
-    } else {
-      setShowQuienesSomos(false)
-    }
+    setActiveSection(section)
   }
 
   return (
@@ -24,22 +21,40 @@ function App() {
         <div className="navbar-content">
           <div className="navbar-logo">LOGO</div>
           <div className="navbar-buttons">
-            <button className="btn btn-primary" onClick={() => handleNavClick("quienes-somos")}>
+            <button 
+              className={`btn ${activeSection === "quienes-somos" ? "btn-active" : "btn-primary"}`} 
+              onClick={() => handleNavClick("quienes-somos")}
+            >
               ¿Quiénes Somos?
             </button>
-            <button className="btn btn-primary" onClick={() => handleNavClick("nosotros")}>
+            <button 
+              className={`btn ${activeSection === "nosotros" ? "btn-active" : "btn-primary"}`} 
+              onClick={() => handleNavClick("nosotros")}
+            >
               Nosotros
             </button>
-            <button className="btn btn-primary" onClick={() => handleNavClick("juventud")}>
+            <button 
+              className={`btn ${activeSection === "juventud" ? "btn-active" : "btn-primary"}`} 
+              onClick={() => handleNavClick("juventud")}
+            >
               Juventud
             </button>
-            <button className="btn btn-primary" onClick={() => handleNavClick("diversidad")}>
+            <button 
+              className={`btn ${activeSection === "diversidad" ? "btn-active" : "btn-primary"}`} 
+              onClick={() => handleNavClick("diversidad")}
+            >
               Diversidad
             </button>
-            <button className="btn btn-primary" onClick={() => handleNavClick("salud")}>
+            <button 
+              className={`btn ${activeSection === "salud-mental" ? "btn-active" : "btn-primary"}`} 
+              onClick={() => handleNavClick("salud-mental")}
+            >
               Salud Mental
             </button>
-            <button className="btn btn-primary" onClick={() => handleNavClick("contacto")}>
+            <button 
+              className={`btn ${activeSection === "contacto" ? "btn-active" : "btn-primary"}`} 
+              onClick={() => handleNavClick("contacto")}
+            >
               Contáctanos
             </button>
           </div>
@@ -48,7 +63,7 @@ function App() {
 
       {/* Contenido principal */}
       <main className="main-content">
-        {showQuienesSomos ? (
+        {activeSection === "quienes-somos" && (
           <section className="quienes-somos fade-in">
             <div className="quienes-somos-content">
               <div className="header-section">
@@ -86,7 +101,11 @@ function App() {
               <div className="circle"></div>
             </div>
           </section>
-        ) : (
+        )}
+
+        {activeSection === "salud-mental" ? <SaludMental /> : null}
+
+        {activeSection !== "quienes-somos" && activeSection !== "salud-mental" && (
           <div className="content-areas fade-in">
             {/* Área de texto 1 */}
             <div className="text-area">
@@ -131,4 +150,3 @@ function App() {
 }
 
 export default App
-
