@@ -146,7 +146,7 @@ const ModernNavBar: React.FC<ModernNavBarProps> = ({
 
         {/* Logo placeholder */}
         <div className="absolute top-4 right-6 text-2xl font-bebas text-[#023047] bg-white/20 px-4 py-2 rounded-lg">
-        logito
+          LOGO
         </div>
       </nav>
 

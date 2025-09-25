@@ -297,65 +297,49 @@ h6 {
     font-size: 2.5rem;
   }
 }
-/* --- TITULOS GENERALES PARA SECCIONES --- */
-.nosotros-content h1,
-.diversidad-content h1 {
-  font-family: var(--font-bebas);
-  font-size: 3rem; /* más grande que antes */
-  color: #222; /* negro o azul oscuro */
-  margin-bottom: 1rem;
-  font-weight: bold;
-  text-align: center;
+.nosotros-fondo {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* --- NOSOTROS (estilo con imagen + bloque lateral naranja) --- */
-.nosotros-section {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nosotros-container {
-  display: flex;
-  align-items: stretch;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.nosotros-image {
-  flex: 1;
-  min-width: 300px;
-}
-
-.nosotros-image img {
+.nosotros-background img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  z-index: 1;
 }
 
-.nosotros-text {
-  flex: 1;
-  background-color: #f39c12; /* Naranja */
+/* Bloque naranja alineado a la derecha */
+.nosotros-cuadro {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  background-color: #f39c12;
   color: #fff;
   padding: 2rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 40%;
+  z-index: 2;
+  border-radius: 0; /* sin bordes redondeados */
+  box-shadow: none; /* sin sombra */
 }
 
-.nosotros-text h1 {
+.nosotros-cuadro h1 {
   font-family: var(--font-bebas);
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #fff; /* blanco sobre naranja */
 }
 
-.nosotros-text p {
+.nosotros-cuadro p {
   font-size: 1.2rem;
   line-height: 1.8;
 }
+
 
 /* --- DIVERSIDAD (tarjeta blanca con lista) --- */
 .diversidad-section {
@@ -491,4 +475,56 @@ h6 {
 .social-bubble:hover {
   transform: scale(1.1);
   background: #d35400; /* naranja más oscuro */
+}
+.galeria-alternada {
+  padding: 2rem 0;
+  background: transparent;
+}
+
+.galeria-fila {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.galeria-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  flex: 1;
+}
+
+.galeria-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.galeria-scroll img {
+  width: 440px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.galeria-scroll img:hover {
+  transform: scale(1.05);
+}
+
+.flecha {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #f39c12;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.flecha:hover {
+  color: #d35400;
 }

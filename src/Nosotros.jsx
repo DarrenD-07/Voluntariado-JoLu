@@ -1,18 +1,19 @@
 "use client";
 import React from "react";
 import "./index.css";
+import GaleriaAlternada from "./GaleriaAlternada"; // 👈 Importación
 
 const Nosotros = () => {
   return (
-    <section className="nosotros-section fade-in">
-      <div className="nosotros-container">
-        {/* Imagen a la izquierda */}
-        <div className="nosotros-image">
-          <img src="/images/nosotros.jpg" alt="Nosotros" />
+    <>
+      <section className="nosotros-fondo fade-in">
+        {/* Imagen de fondo */}
+        <div className="nosotros-background">
+          <img src="/public/jolus.jpeg" alt="Fondo Nosotros" />
         </div>
 
-        {/* Texto en bloque naranja a la derecha */}
-        <div className="nosotros-text">
+        {/* Bloque naranja alineado a la derecha */}
+        <div className="nosotros-cuadro">
           <h1>NOSOTROS</h1>
           <p>
             Informamos a la población adolescente y joven sobre temas clave como
@@ -20,8 +21,11 @@ const Nosotros = () => {
             múltiples y problemas conductuales propios de la edad.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Galería Alternada debajo */}
+      <GaleriaAlternada />
+    </>
   );
 };
 
