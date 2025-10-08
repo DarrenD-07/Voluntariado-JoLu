@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
 }
 
-/* Estilos para títulos con Bebas Neue */
+
 h1,
 h2,
 h3,
@@ -43,7 +43,7 @@ h6 {
   letter-spacing: 1px;
 }
 
-/* Estilos para botones modernos */
+
 .btn {
   font-family: var(--font-bebas);
   font-size: 1.1rem;
@@ -547,7 +547,6 @@ h6 {
 .flecha:hover {
   color: #d35400;
 }
-
 .galeria-scroll {
   position: relative;
   overflow: hidden;
@@ -571,7 +570,6 @@ h6 {
   margin: 4rem 0 2.5rem;
   padding: 0 2rem;
 }
-
 .galeria-header {
   width: 100vw;
   margin-left: 50%;
@@ -603,7 +601,6 @@ h6 {
   text-transform: uppercase;
   text-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
-
 
 .galeria-badge::after {
   content: "";
