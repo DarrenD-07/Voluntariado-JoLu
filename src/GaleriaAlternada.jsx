@@ -55,7 +55,6 @@ const GaleriaAlternada = () => {
     track.style.transform = `translate3d(${-posRef.current[i]}px,0,0)`;
   };
 
-
   useEffect(() => {
     const medirTodo = () => {
       for (let i = 0; i < 6; i++) medirFila(i);
@@ -75,7 +74,6 @@ const GaleriaAlternada = () => {
       document.removeEventListener("load", onImgLoad, true);
     };
   }, [filasRefs, tracksRefs]);
-
 
   useEffect(() => {
     let rafId;
