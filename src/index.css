@@ -297,18 +297,18 @@ h6 {
     font-size: 2.5rem;
   }
 }
-/* --- TITULOS GENERALES PARA SECCIONES --- */
+
 .nosotros-content h1,
 .diversidad-content h1 {
   font-family: var(--font-bebas);
-  font-size: 3rem; /* más grande que antes */
-  color: #222; /* negro o azul oscuro */
+  font-size: 3rem; 
+  color: #222; 
   margin-bottom: 1rem;
   font-weight: bold;
   text-align: center;
 }
 
-/* --- NOSOTROS (estilo con imagen + bloque lateral naranja) --- */
+
 .nosotros-section {
   padding: 2rem;
   max-width: 1200px;
@@ -336,7 +336,7 @@ h6 {
 
 .nosotros-text {
   flex: 1;
-  background-color: #f39c12; /* Naranja */
+  background-color: #f39c12; 
   color: #fff;
   padding: 2rem;
   border-radius: 8px;
@@ -349,7 +349,7 @@ h6 {
   font-family: var(--font-bebas);
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #fff; /* blanco sobre naranja */
+  color: #fff; 
 }
 
 .nosotros-text p {
@@ -357,7 +357,7 @@ h6 {
   line-height: 1.8;
 }
 
-/* --- DIVERSIDAD (tarjeta blanca con lista) --- */
+
 .diversidad-section {
   padding: 2rem;
   max-width: 800px;
@@ -399,14 +399,14 @@ h6 {
   background-color: #f8f9fa;
   border-radius: 0 4px 4px 0;
 }
-/* --- Sección Contactanos --- */
+
 .contactanos-section {
-  background-color: #fff; /* fondo blanco */
+  background-color: #fff;
   padding: 3rem 2rem;
   text-align: center;
 }
 
-/* --- Forma naranja con "recorte circular" --- */
+
 .contactanos-shape {
   background-color: #f39c12; /* naranja */
   color: #fff;
@@ -426,7 +426,7 @@ h6 {
   width: 150px;
   height: 150px;
   background: #fff;
-  border-radius: 50%; /* círculo blanco que simula "recorte" */
+  border-radius: 50%; 
 }
 
 .contactanos-shape h1 {
@@ -435,7 +435,7 @@ h6 {
   font-weight: bold;
 }
 
-/* --- 3 columnas de información --- */
+
 .contactanos-info {
   display: flex;
   justify-content: space-between;
@@ -465,7 +465,7 @@ h6 {
   color: #444;
 }
 
-/* --- Redes sociales en burbujas --- */
+
 .contactanos-socials {
   display: flex;
   justify-content: center;
@@ -490,5 +490,220 @@ h6 {
 
 .social-bubble:hover {
   transform: scale(1.1);
-  background: #d35400; /* naranja más oscuro */
+  background: #d35400; 
+}
+.galeria-alternada {
+  padding: 2rem 0;
+  background: transparent;
+}
+
+.galeria-fila {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.galeria-scroll {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  overflow: hidden;
+  scroll-behavior: auto;
+  will-change: transform;
+}
+
+.galeria-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.galeria-scroll img {
+  width: 440px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  aspect-ratio: 11 / 7;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+  transition: transform 0.3s ease;
+}
+
+.galeria-scroll img:hover {
+  transform: scale(1.05);
+}
+
+.flecha {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #f39c12;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.flecha:hover {
+  color: #d35400;
+}
+
+.galeria-scroll {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.galeria-track {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+}
+
+.galeria-img {
+  contain: layout paint size;
+}
+.galeria-header {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0 2.5rem;
+  padding: 0 2rem;
+}
+
+.galeria-header {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  overflow: visible; 
+}
+
+
+.galeria-badge {
+  position: relative;
+  isolation: isolate;       
+  width: 100%;
+  text-align: center;
+
+
+  background: linear-gradient(135deg, #5aa3c7, #0f4e6b);
+  color: #fff;
+
+  font-family: var(--font-bebas, "Bebas Neue", cursive);
+  font-size: clamp(3.2rem, 8vw, 7.2rem);
+  letter-spacing: 4px;
+
+
+  padding: clamp(1.1rem, 2.2vw, 2rem) 0;
+  border-radius: 0;       
+  box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+
+.galeria-badge::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(-1 * clamp(4.8rem, 10vw, 11rem)); 
+  width: 130vw;              
+  height: clamp(9rem, 20vw, 22rem);
+  background: inherit;      
+  border-radius: 0 0 50% 50% / 0 0 100% 100%; 
+  box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+  z-index: -1;               
+}
+
+@media (max-width: 768px) {
+  .galeria-badge {
+    font-size: clamp(2.6rem, 9vw, 4.2rem);
+  }
+  .galeria-badge::after {
+    bottom: calc(-1 * clamp(3.6rem, 9vw, 8rem));
+    height: clamp(7rem, 24vw, 16rem);
+  }
+}
+
+.nosotros-fondo {
+  position: relative;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: clamp(460px, 56vh, 620px);
+  overflow: hidden;
+  margin-bottom: 56px; 
+}
+
+
+.nosotros-fondo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.nosotros-fondo {
+  position: relative;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: clamp(460px, 56vh, 620px);
+  overflow: hidden;
+  margin-bottom: 56px; 
+}
+
+
+.nosotros-fondo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
+.nosotros-fondo .nosotros-text {
+  position: absolute;
+  right: clamp(16px, 5vw, 56px);
+  bottom: 32px;                
+  width: clamp(320px, 30vw, 440px);
+  padding: 1rem 1.25rem;
+  background: #f39c12;
+  color: #fff;
+  border-radius: 0;           
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  z-index: 1;
+}
+
+/* Texto compacto dentro de la tarjeta */
+.nosotros-fondo .nosotros-text h1 {
+  font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+  margin: 0 0 .5rem 0;
+  color: #fff;
+}
+.nosotros-fondo .nosotros-text p {
+  font-size: clamp(.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .nosotros-fondo {
+    height: 54vh;
+    margin-bottom: 36px;
+  }
+  .nosotros-fondo .nosotros-text {
+    position: static;        
+    width: 92%;
+    margin: 10px auto 0;
+  }
 }

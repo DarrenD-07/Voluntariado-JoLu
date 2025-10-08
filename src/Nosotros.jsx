@@ -1,17 +1,18 @@
 "use client";
 import React from "react";
 import "./index.css";
+import GaleriaAlternada from "./GaleriaAlternada";
 
 const Nosotros = () => {
   return (
-    <section className="nosotros-section fade-in">
-      <div className="nosotros-container">
-        {/* Imagen a la izquierda */}
-        <div className="nosotros-image">
-          <img src="/images/nosotros.jpg" alt="Nosotros" />
-        </div>
+    <>
+      <section className="nosotros-fondo fade-in">
+        <img
+          src="/fondojolunosotros.jpg"
+          alt="Fondo Nosotros"
+          className="nosotros-fondo-img"
+        />
 
-        {/* Texto en bloque naranja a la derecha */}
         <div className="nosotros-text">
           <h1>NOSOTROS</h1>
           <p>
@@ -20,8 +21,10 @@ const Nosotros = () => {
             múltiples y problemas conductuales propios de la edad.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <GaleriaAlternada />
+    </>
   );
 };
 
