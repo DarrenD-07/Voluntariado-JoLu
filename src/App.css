@@ -1,0 +1,302 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.text-area h2 {
+  font-family: var(--font-bebas);
+  font-size: 1.8rem;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.error-list {
+  list-style: none;
+  padding: 0;
+}
+
+.error-item {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  color: #c33;
+  font-size: 14px;
+}
+
+.logo-principal {
+  max-width: 120px; /* Reducido de 200px */
+  height: auto;
+  margin-bottom: 0; /* Quitado el margen inferior */
+  vertical-align: middle; /* Alinear verticalmente */
+}
+
+/* Estilos específicos para la sección Quienes Somos */
+.quienes-somos {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+}
+
+.quienes-somos-content {
+  position: relative;
+  z-index: 10;
+  max-width: 700px;
+  padding: 60px; /* Aumentado el padding */
+}
+
+/* Agregando estilos para el header con imagen */
+.header-section {
+  display: flex;
+  align-items: center; /* Cambiado de flex-start a center */
+  justify-content: center; /* Cambiado a center */
+  margin-bottom: 40px; /* Aumentado el margen inferior */
+  gap: 40px; /* Aumentado de 24px a 40px */
+  padding: 0 20px; /* Añadido padding lateral */
+  text-align: center; /* Añadido para centrar el texto */
+}
+
+.header-section h1 {
+  flex: 0; /* Cambiado de 1 a 0 para que no tome espacio extra */
+  font-family: var(--font-bebas);
+  font-size: 2.5rem;
+  color: var(--color-dark);
+  margin: 0;
+  letter-spacing: 2px;
+  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+}
+
+.image-placeholder {
+  flex-shrink: 0;
+  width: 120px; /* Reducido de 150px a 120px */
+  height: 90px; /* Reducido proporcionalmente */
+  border: none; /* Quitar el borde */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Cambiar a transparente */
+  transition: all 0.3s ease;
+}
+
+.image-placeholder:hover {
+  border-color: transparent; /* Quitar el borde en hover */
+  background-color: transparent; /* Mantener transparente en hover */
+  transform: scale(1.02);
+}
+
+.company-logo {
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+/* Responsive para App */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 16px;
+  }
+
+  .content-areas {
+    gap: 16px;
+  }
+
+  .text-area {
+    padding: 16px;
+  }
+
+  .text-area h2 {
+    font-size: 1.5rem;
+  }
+
+  .quienes-somos {
+    padding: 40px 16px;
+  }
+
+  /* Responsive para el header con imagen */
+  .header-section {
+    flex-direction: row; /* Cambiado de column a row */
+    gap: 24px;
+  }
+
+  .header-section h1 {
+    font-size: 2rem;
+  }
+
+  .image-placeholder {
+    width: 100px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-area textarea {
+    min-height: 100px;
+    padding: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  /* Ajustes adicionales para móviles pequeños */
+  .header-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .image-placeholder {
+    width: 100px;
+    height: 70px;
+  }
+
+  h1 {
+  text-align: center;
+  }
+
+}
+
+/* Estilos para la sección de Salud Mental */
+.salud-mental-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.salud-mental-content h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.objetivo-section, .temas-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.objetivo-section h2, .temas-section h2 {
+  color: #3498db;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e8f4fc;
+  padding-bottom: 0.5rem;
+}
+
+.objetivo-section p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.temas-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.temas-section li {
+  padding: 0.5rem 0;
+  line-height: 1.6;
+  border-left: 4px solid #3498db;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  background-color: #f8f9fa;
+  border-radius: 0 4px 4px 0;
+}
+
+.separator {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #3498db, transparent);
+  margin: 2rem 0;
+}
+
+/* Ajustar el tamaño del logo */
+.logo-principal {
+  max-width: 115px; /* Reducido de 200px */
+  height: auto;
+  margin-bottom: 0; /* Quitado el margen inferior */
+  vertical-align: middle; /* Alinear verticalmente */
+}
+
+/* Ajustar el contenedor del navbar */
+.navbar {
+  background: var(--color-white);
+  padding: 12px 24px; /* Reducido el padding vertical */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Ajustar los botones */
+.btn {
+  font-family: var(--font-bebas);
+  font-size: 1rem; /* Reducido de 1.1rem */
+  letter-spacing: 1px;
+  padding: 8px 16px; /* Reducido el padding */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 400;
+  min-width: 100px; /* Reducido de 120px */
+}
+
+/* Ajustar el espacio entre los botones */
+.navbar-buttons {
+  display: flex;
+  gap: 8px; /* Reducido de 12px */
+  flex-wrap: wrap;
+  align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilos para la sección de Juventud */
+.juventud-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10 px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.juventud-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.juventud-content h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-family: var(--font-bebas);
+}
+
+
+
+
+
