@@ -27,7 +27,7 @@ function App() {
       <nav className="navbar">
         <div className="navbar-content">
           <div className="navbar-logo">
-            <img src="/logo.png" alt="Logo" className="logo-principal" />
+            <img src="/logo2.png" alt="Logo" className="logo-principal" />
           </div>
           <div className="navbar-buttons">
             <button 
@@ -77,9 +77,6 @@ function App() {
             <div className="quienes-somos-content">
               <div className="header-section">
                 <h1>NUESTRA HISTORIA</h1>
-                <div className="image-placeholder">
-                  <img src="/logo2.png" alt="Logo de la empresa" className="company-logo" />
-                </div>
               </div>
               <p>
               Jolu de Guatemala ONG, fue creada con el fin de apoyar a adolescentes y jóvenes, comunidad LGBTIQ+, salud mental, e impactar en la educación de Guatemala, promoviendo la igualdad y los derechos humanos.

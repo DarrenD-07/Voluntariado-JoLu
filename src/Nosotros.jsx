@@ -8,7 +8,7 @@ const Nosotros = () => {
     <>
       <section className="nosotros-fondo fade-in">
         <img
-          src="/fondojolunosotros.jpg"
+          src="/galeria/fondojolunosotros.jpg"
           alt="Fondo Nosotros"
           className="nosotros-fondo-img"
         />

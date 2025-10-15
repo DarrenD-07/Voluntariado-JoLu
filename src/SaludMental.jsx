@@ -1,10 +1,15 @@
 "use client"
+import "./SaludMental.css"
 
 const SaludMental = () => {
   return (
     <section className="salud-mental-section fade-in">
       <div className="salud-mental-content">
-        <h1>Salud Mental</h1>
+        <div className="salud-mental-header">
+          <div className="salud-mental-title-section">
+            <h1>Salud <span className="salud-mental-highlight-text">Mental</span></h1>
+          </div>
+        </div>
         
         <div className="objetivo-section">
           <h2>Objetivo</h2>
@@ -13,18 +18,62 @@ const SaludMental = () => {
 
         <hr className="separator" />
 
-        <div className="temas-section">
-          <h2>Temas Abordados</h2>
-          <ul>
-            <li>Trastorno de Depresión</li>
-            <li>Trastorno de Ansiedad Generalizada</li>
-            <li>Trastorno de Ataques de Pánico</li>
-            <li>Ideación suicida</li>
-            <li>Autoaceptación</li>
-            <li>Autoconcepto</li>
-            <li>Inteligencia emocional</li>
-            <li>Entre otros</li>
-          </ul>
+        <div className="salud-mental-servicios-list">
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">😔</div>
+            <div className="salud-mental-servicio-text">
+              <h3>TRASTORNO DE DEPRESIÓN</h3>
+            </div>
+          </div>
+          
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">😰</div>
+            <div className="salud-mental-servicio-text">
+              <h3>TRASTORNO DE ANSIEDAD GENERALIZADA</h3>
+            </div>
+          </div>
+          
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">💔</div>
+            <div className="salud-mental-servicio-text">
+              <h3>TRASTORNO DE ATAQUES DE PÁNICO</h3>
+            </div>
+          </div>
+          
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">🆘</div>
+            <div className="salud-mental-servicio-text">
+              <h3>IDEACIÓN SUICIDA</h3>
+            </div>
+          </div>
+
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">🤗</div>
+            <div className="salud-mental-servicio-text">
+              <h3>AUTOACEPTACIÓN</h3>
+            </div>
+          </div>
+
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">🪞</div>
+            <div className="salud-mental-servicio-text">
+              <h3>AUTOCONCEPTO</h3>
+            </div>
+          </div>
+
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">🧠</div>
+            <div className="salud-mental-servicio-text">
+              <h3>INTELIGENCIA EMOCIONAL</h3>
+            </div>
+          </div>
+
+          <div className="salud-mental-servicio-item">
+            <div className="salud-mental-servicio-icon">💡</div>
+            <div className="salud-mental-servicio-text">
+              <h3>ENTRE OTROS</h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>

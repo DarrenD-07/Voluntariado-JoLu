@@ -42,8 +42,10 @@
 }
 
 .logo-principal {
-  max-width: 200px;
-  margin-bottom: 5px;
+  max-width: 120px; /* Reducido de 200px */
+  height: auto;
+  margin-bottom: 0; /* Quitado el margen inferior */
+  vertical-align: middle; /* Alinear verticalmente */
 }
 
 /* Estilos específicos para la sección Quienes Somos */
@@ -59,42 +61,46 @@
   position: relative;
   z-index: 10;
   max-width: 700px;
+  padding: 60px; /* Aumentado el padding */
 }
 
 /* Agregando estilos para el header con imagen */
 .header-section {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  gap: 24px;
+  align-items: center; /* Cambiado de flex-start a center */
+  justify-content: center; /* Cambiado a center */
+  margin-bottom: 40px; /* Aumentado el margen inferior */
+  gap: 40px; /* Aumentado de 24px a 40px */
+  padding: 0 20px; /* Añadido padding lateral */
+  text-align: center; /* Añadido para centrar el texto */
 }
 
 .header-section h1 {
-  flex: 1;
+  flex: 0; /* Cambiado de 1 a 0 para que no tome espacio extra */
   font-family: var(--font-bebas);
   font-size: 2.5rem;
   color: var(--color-dark);
   margin: 0;
   letter-spacing: 2px;
+  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
 }
 
 .image-placeholder {
   flex-shrink: 0;
-  width: 150px;
-  height: 100px;
-  border: 2px dashed var(--color-accent);
+  width: 120px; /* Reducido de 150px a 120px */
+  height: 90px; /* Reducido proporcionalmente */
+  border: none; /* Quitar el borde */
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(139, 202, 230, 0.1);
+  background-color: transparent; /* Cambiar a transparente */
   transition: all 0.3s ease;
 }
 
 .image-placeholder:hover {
-  border-color: var(--color-primary);
-  background-color: rgba(139, 202, 230, 0.2);
+  border-color: transparent; /* Quitar el borde en hover */
+  background-color: transparent; /* Mantener transparente en hover */
   transform: scale(1.02);
 }
 
@@ -128,10 +134,8 @@
 
   /* Responsive para el header con imagen */
   .header-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+    flex-direction: row; /* Cambiado de column a row */
+    gap: 24px;
   }
 
   .header-section h1 {
@@ -139,8 +143,8 @@
   }
 
   .image-placeholder {
-    width: 120px;
-    height: 80px;
+    width: 100px;
+    height: 75px;
   }
 }
 
@@ -170,13 +174,6 @@
   }
 
 }
-
-
-
-
-
-
-
 
 /* Estilos para la sección de Salud Mental */
 .salud-mental-section {
@@ -233,6 +230,73 @@
   background: linear-gradient(to right, transparent, #3498db, transparent);
   margin: 2rem 0;
 }
+
+/* Ajustar el tamaño del logo */
+.logo-principal {
+  max-width: 115px; /* Reducido de 200px */
+  height: auto;
+  margin-bottom: 0; /* Quitado el margen inferior */
+  vertical-align: middle; /* Alinear verticalmente */
+}
+
+/* Ajustar el contenedor del navbar */
+.navbar {
+  background: var(--color-white);
+  padding: 12px 24px; /* Reducido el padding vertical */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Ajustar los botones */
+.btn {
+  font-family: var(--font-bebas);
+  font-size: 1rem; /* Reducido de 1.1rem */
+  letter-spacing: 1px;
+  padding: 8px 16px; /* Reducido el padding */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 400;
+  min-width: 100px; /* Reducido de 120px */
+}
+
+/* Ajustar el espacio entre los botones */
+.navbar-buttons {
+  display: flex;
+  gap: 8px; /* Reducido de 12px */
+  flex-wrap: wrap;
+  align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilos para la sección de Juventud */
+.juventud-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10 px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.juventud-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.juventud-content h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-family: var(--font-bebas);
+}
+
+
 
 
 

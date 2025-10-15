@@ -7,13 +7,17 @@ const Diversidad = () => {
     <section className="diversidad-section fade-in">
       <div className="diversidad-content">
         <h1>DIVERSIDAD</h1>
-        <p>
+
+        <div className="diversidad-section">
+          <p>
           Promovemos la inclusión, el respeto y la valoración de las diferencias
           individuales en la sociedad. Fomentamos el reconocimiento de la
           diversidad cultural, sexual, de género, de capacidades y de
           pensamiento, como pilares para una convivencia armónica y equitativa.
-        </p>
+          </p>
+        </div>
 
+        <div className="temas-section">
         <h2>Temas Abordados</h2>
         <ul>
           <li>Respeto a la diversidad cultural y social</li>
@@ -22,6 +26,7 @@ const Diversidad = () => {
           <li>Prevención de la discriminación</li>
           <li>Promoción de la equidad</li>
         </ul>
+      </div>
       </div>
     </section>
   );
