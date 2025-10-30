@@ -12,17 +12,15 @@ const Nosotros = () => {
           alt="Fondo Nosotros"
           className="nosotros-fondo-img"
         />
-
-        <div className="nosotros-text">
-          <h1>NOSOTROS</h1>
-          <p>
-            Informamos a la población adolescente y joven sobre temas clave como
-            salud sexual y reproductiva, empleabilidad, educación, inteligencias
-            múltiples y problemas conductuales propios de la edad.
-          </p>
-        </div>
       </section>
-
+      <div className="nosotros-text">
+        <h1>NOSOTROS</h1>
+        <p>
+          Informamos a la población adolescente y joven sobre temas clave como
+          salud sexual y reproductiva, empleabilidad, educación, inteligencias
+          múltiples y problemas conductuales propios de la edad.
+        </p>
+      </div>
       <GaleriaAlternada />
     </>
   );

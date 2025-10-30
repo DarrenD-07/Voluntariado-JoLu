@@ -420,16 +420,6 @@ h6 {
   overflow: hidden;
 }
 
-.contactanos-shape::after {
-  content: "";
-  position: absolute;
-  bottom: -60px;
-  right: -60px;
-  width: 150px;
-  height: 150px;
-  background: #f39c12;
-  border-radius: 50%; 
-}
 
 .contactanos-shape h1 {
   font-size: 3rem;
