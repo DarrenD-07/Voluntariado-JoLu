@@ -7,8 +7,8 @@
 }
 
 :root {
-  --color-primary: #8ecae6;
-  --color-secondary: #219ebc;
+  --color-primary: #ffb703;
+  --color-secondary:#fb8500;
   --color-dark: #023047;
   --color-accent-1: #ffb703;
   --color-accent-2: #fb8500;
@@ -29,6 +29,7 @@ body {
   color: var(--color-text);
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 
@@ -119,7 +120,8 @@ h6 {
 
 /* Estilos para la navegación */
 .navbar {
-  background: linear-gradient(135deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
+  /* background: linear-gradient(to bottom, rgb(241, 196, 111) 0%, white 100%); */
+  background: #fff;
   padding: 16px 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -425,7 +427,7 @@ h6 {
   right: -60px;
   width: 150px;
   height: 150px;
-  background: #fff;
+  background: #f39c12;
   border-radius: 50%; 
 }
 
@@ -531,9 +533,6 @@ h6 {
   transition: transform 0.3s ease;
 }
 
-.galeria-scroll img:hover {
-  transform: scale(1.05);
-}
 
 .flecha {
   background: none;

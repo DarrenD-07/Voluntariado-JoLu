@@ -8,9 +8,9 @@ const Juventud = () => {
     <section className="salud-mental-section fade-in">
       <div className="salud-mental-content">
         <div className="salud-mental-header">
-          <div className="salud-mental-image">
+          {/* <div className="salud-mental-image">
             <img src="/logo2.png" alt="Juventud" className="salud-mental-logo" />
-          </div>
+          </div> */}
           <div className="salud-mental-title-section">
             <h1>Adolescencia y <span className="salud-mental-highlight-text">Juventud</span></h1>
           </div>
