@@ -16,9 +16,11 @@ function App() {
   const [responseContent, setResponseContent] = useState("")
   const [errorList, setErrorList] = useState([])
   const [activeSection, setActiveSection] = useState("quienes-somos")
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const handleNavClick = (section) => {
     setActiveSection(section)
+    setMenuOpen(false)
   }
 
   return (
@@ -29,43 +31,54 @@ function App() {
           <div className="navbar-logo">
             <img src="/logo.png" alt="Logo" className="logo-principal" />
           </div>
-          <div className="navbar-buttons">
-            <button 
-              className={`btn ${activeSection === "quienes-somos" ? "btn-active" : "btn-primary"}`} 
-              onClick={() => handleNavClick("quienes-somos")}
-            >
-              ¿Quiénes Somos?
-            </button>
-            <button 
-              className={`btn ${activeSection === "nosotros" ? "btn-active" : "btn-primary"}`} 
-              onClick={() => handleNavClick("nosotros")}
-            >
-              Nosotros
-            </button>
-            <button 
-              className={`btn ${activeSection === "juventud" ? "btn-active" : "btn-primary"}`} 
-              onClick={() => handleNavClick("juventud")}
-            >
-              Juventud
-            </button>
-            <button 
-              className={`btn ${activeSection === "diversidad" ? "btn-active" : "btn-primary"}`} 
-              onClick={() => handleNavClick("diversidad")}
-            >
-              Diversidad
-            </button>
-            <button 
-              className={`btn ${activeSection === "salud-mental" ? "btn-active" : "btn-primary"}`} 
-              onClick={() => handleNavClick("salud-mental")}
-            >
-              Salud Mental
-            </button>
-            <button 
-              className={`btn ${activeSection === "contacto" ? "btn-active" : "btn-primary"}`} 
-              onClick={() => handleNavClick("contacto")}
-            >
-              Contáctanos
-            </button>
+          <div className="navbar-menu">
+            <div className="dropdown" tabIndex={0}>
+              <button
+                className="dropdown-toggle btn btn-active"
+                onClick={() => setMenuOpen((open) => !open)}
+                aria-expanded={menuOpen}
+              >
+                Menu ▼
+              </button>
+              <div className="dropdown-menu" style={{ display: menuOpen ? 'block' : 'none' }}>
+                <button
+                  className={`dropdown-item ${activeSection === "quienes-somos" ? "selected" : ""}`}
+                  onClick={() => handleNavClick("quienes-somos")}
+                >
+                  ¿Quiénes somos?
+                </button>
+                <button
+                  className={`dropdown-item ${activeSection === "nosotros" ? "selected" : ""}`}
+                  onClick={() => handleNavClick("nosotros")}
+                >
+                  Nosotros
+                </button>
+                <button
+                  className={`dropdown-item ${activeSection === "juventud" ? "selected" : ""}`}
+                  onClick={() => handleNavClick("juventud")}
+                >
+                  Juventud
+                </button>
+                <button
+                  className={`dropdown-item ${activeSection === "diversidad" ? "selected" : ""}`}
+                  onClick={() => handleNavClick("diversidad")}
+                >
+                  Diversidad
+                </button>
+                <button
+                  className={`dropdown-item ${activeSection === "salud-mental" ? "selected" : ""}`}
+                  onClick={() => handleNavClick("salud-mental")}
+                >
+                  Salud Mental
+                </button>
+                <button
+                  className={`dropdown-item ${activeSection === "contacto" ? "selected" : ""}`}
+                  onClick={() => handleNavClick("contacto")}
+                >
+                  Contáctanos
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -105,9 +118,6 @@ En esa línea de ideas, se desarrollan actividades públicas informativas, que p
         {activeSection === "nosotros" ? <Nosotros /> : null}
         {activeSection === "diversidad" ? <Diversidad /> : null}
         {activeSection === "contacto" ? <Contactanos /> : null}
-
-
-        
       </main>
     </div>
   )

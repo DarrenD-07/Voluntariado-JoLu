@@ -4,24 +4,32 @@ import "./index.css";
 
 const GaleriaAlternada = () => {
 
+  // Lista de imágenes realmente existentes en public/galeria
+  const imagenes = [
+    "jolu1.jpg", "jolu2.jpg", "jolu3.jpg", "jolu4.jpg", "jolu5.jpg", "jolu6.jpg", "jolu7.jpg", "jolu8.jpg", "jolu9.jpg",
+    "jolu10.jpg", "jolu11.jpg", "jolu12.jpg", "jolu13.jpg", "jolu14.jpg", "jolu15.jpg", "jolu16.jpg", "jolu17.jpg", "jolu18.jpg", "jolu19.jpg",
+    "jolu20.jpg", "jolu21.jpg", "jolu22.jpg", "jolu23.jpg", "jolu24.jpg", "jolu25.jpg", "jolu26.jpg", "jolu27.jpg", "jolu28.jpg", "jolu29.jpg",
+    "jolu30.jpg", "jolu31.jpg", "jolu32.jpg", "jolu33.jpg", "jolu34.jpg", "jolu35.jpg", "jolu36.jpg", "jolu37.jpg", "jolu38.jpg", "jolu39.jpg",
+    "jolu40.jpg", "jolu41.jpg", "jolu42.jpg"
+  ];
+  const numFilas = 6;
+  const imagenesPorFila = Math.ceil(imagenes.length / numFilas);
+  // Divide las imágenes en filas sin dejar huecos ni espacios vacíos
+  const imagenesEnFilas = Array.from({ length: numFilas }, (_, i) =>
+    imagenes.slice(i * imagenesPorFila, (i + 1) * imagenesPorFila)
+  );
   const filasRefs = useMemo(
-    () => Array.from({ length: 6 }, () => React.createRef()),
+    () => Array.from({ length: numFilas }, () => React.createRef()),
     []
   );
-  
   const tracksRefs = useMemo(
-    () => Array.from({ length: 6 }, () => React.createRef()),
+    () => Array.from({ length: numFilas }, () => React.createRef()),
     []
   );
-
-
-  const direcciones = useMemo(() => [-1, 1, -1, 1, -1, 1], []);
-  
-  const velocidadPxPorSegundo = 30;
-
-
-  const posRef = useRef(Array(6).fill(0));
-  const setWidthRef = useRef(Array(6).fill(0));
+  const direcciones = useMemo(() => Array.from({ length: numFilas }, (_, i) => (i % 2 === 0 ? -1 : 1)), []);
+  const velocidadPxPorSegundo = 60;
+  const posRef = useRef(Array(numFilas).fill(0));
+  const setWidthRef = useRef(Array(numFilas).fill(0));
 
   const onImgError = (e) => {
     e.currentTarget.onerror = null;
@@ -122,43 +130,36 @@ const GaleriaAlternada = () => {
     };
   }, [filasRefs, tracksRefs, direcciones]);
 
-  const renderFila = (wrapRef, trackRef, startIndex) => (
-    <div className="galeria-fila" key={`fila-${startIndex}`}>
+  const renderFila = (wrapRef, trackRef, imagenesFila) => (
+    <div className="galeria-fila" key={imagenesFila[0] || Math.random()}>
       <div className="galeria-scroll" ref={wrapRef}>
-        
         <div className="galeria-track" ref={trackRef}>
           {[...Array(2)].map((_, d) =>
-            [...Array(7)].map((_, i) => {
-              const n = startIndex + i;
-              const src = `/galeria/jolu${n}.jpg`; 
-              return (
-                <img
-                  key={`set${d}-${n}`}
-                  src={src}
-                  alt={`Actividad ${n}`}
-                  loading="lazy"
-                  decoding="async"
-                  onError={onImgError}
-                  className="galeria-img"
-                />
-              );
-            })
+            imagenesFila.map((img, i) => (
+              <img
+                key={`set${d}-${img}`}
+                src={`/galeria/${img}`}
+                alt={`Actividad ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+                onError={onImgError}
+                className="galeria-img"
+              />
+            ))
           )}
         </div>
       </div>
     </div>
   );
 
-  const startIdx = [1, 8, 15, 22, 29, 36];
+  // Renderizar filas usando solo imágenes existentes
 
   return (
     <section className="galeria-alternada">
-    
       <div className="galeria-header">
         <div className="galeria-badge">GALERÍA</div>
       </div>
-
-      {startIdx.map((idx, i) => renderFila(filasRefs[i], tracksRefs[i], idx))}
+  {imagenesEnFilas.map((filaImgs, i) => renderFila(filasRefs[i], tracksRefs[i], filaImgs))}
     </section>
   );
 };

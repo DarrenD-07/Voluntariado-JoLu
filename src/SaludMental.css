@@ -1,0 +1,397 @@
+/* Estilos específicos para el componente SaludMental */
+
+/* Estilos para la sección de Salud Mental */
+.salud-mental-section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.salud-mental-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.salud-mental-image {
+  flex-shrink: 0;
+}
+
+.salud-mental-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.salud-mental-title-section {
+  flex: 1;
+}
+
+.salud-mental-title-section h1 {
+  color: var(--color-dark);
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  margin: 0;
+  font-family: var(--font-bebas);
+}
+
+.salud-mental-highlight-text {
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+.salud-mental-section .objetivo-section, 
+.salud-mental-section .temas-section {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2.5rem;
+  border-left: 5px solid var(--color-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.salud-mental-section .objetivo-section:hover, 
+.salud-mental-section .temas-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.salud-mental-section .objetivo-section h2, 
+.salud-mental-section .temas-section h2 {
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.salud-mental-section .objetivo-section h2:before, 
+.salud-mental-section .temas-section h2:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--color-accent-1);
+  border-radius: 2px;
+}
+
+.salud-mental-section .objetivo-section p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-align: justify;
+}
+
+.salud-mental-servicios-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+
+.salud-mental-servicio-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: var(--color-accent-1);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+}
+
+.salud-mental-servicio-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent-1));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.salud-mental-servicio-item:hover::before {
+  transform: scaleX(1);
+}
+
+.salud-mental-servicio-item:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 183, 3, 0.4);
+  border-color: var(--color-accent-2);
+  background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+}
+
+.salud-mental-servicio-item:nth-child(even):hover {
+  transform: translateY(-12px) scale(1.02) rotate(1deg);
+}
+
+.salud-mental-servicio-item:nth-child(odd):hover {
+  transform: translateY(-12px) scale(1.02) rotate(-1deg);
+}
+
+.salud-mental-servicio-icon {
+  font-size: 3.5rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 25px rgba(139, 202, 230, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.salud-mental-servicio-icon::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.salud-mental-servicio-item:hover .salud-mental-servicio-icon::before {
+  animation: saludMentalShimmer 0.6s ease-in-out;
+}
+
+@keyframes saludMentalShimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.salud-mental-servicio-item:hover .salud-mental-servicio-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(139, 202, 230, 0.4);
+}
+
+.salud-mental-servicio-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.salud-mental-servicio-text h3 {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+  font-family: var(--font-bebas);
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.salud-mental-servicio-item:hover .salud-mental-servicio-text h3 {
+  color: var(--color-dark);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.salud-mental-section .separator {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-secondary), transparent);
+  margin: 3rem 0;
+  border-radius: 1px;
+}
+
+/* Efectos de entrada escalonados para Salud Mental */
+.salud-mental-servicio-item:nth-child(1) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.1s both;
+}
+
+.salud-mental-servicio-item:nth-child(2) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.2s both;
+}
+
+.salud-mental-servicio-item:nth-child(3) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.3s both;
+}
+
+.salud-mental-servicio-item:nth-child(4) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.4s both;
+}
+
+.salud-mental-servicio-item:nth-child(5) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.5s both;
+}
+
+.salud-mental-servicio-item:nth-child(6) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.6s both;
+}
+
+.salud-mental-servicio-item:nth-child(7) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.7s both;
+}
+
+.salud-mental-servicio-item:nth-child(8) {
+  animation: saludMentalSlideInUp 0.6s ease-out 0.8s both;
+}
+
+@keyframes saludMentalSlideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animaciones para Salud Mental */
+@keyframes saludMentalFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.salud-mental-section {
+  animation: saludMentalFadeInUp 0.8s ease-out;
+}
+
+.salud-mental-section .objetivo-section {
+  animation: saludMentalFadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Responsive para Salud Mental */
+@media (max-width: 768px) {
+  .salud-mental-section {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .salud-mental-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .salud-mental-title-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .salud-mental-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .salud-mental-section .objetivo-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .salud-mental-section .objetivo-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .salud-mental-servicios-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .salud-mental-servicio-item {
+    padding: 2rem 1rem;
+  }
+
+  .salud-mental-servicio-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .salud-mental-servicio-text h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .salud-mental-section {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .salud-mental-title-section h1 {
+    font-size: 2rem;
+  }
+
+  .salud-mental-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .salud-mental-section .objetivo-section {
+    padding: 1rem;
+  }
+
+  .salud-mental-servicios-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .salud-mental-servicio-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .salud-mental-servicio-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+  }
+
+  .salud-mental-servicio-text h3 {
+    font-size: 0.9rem;
+  }
+
+  /* Reducir efectos en móvil para mejor performance */
+  .salud-mental-servicio-item:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+
+  .salud-mental-servicio-item:nth-child(even):hover,
+  .salud-mental-servicio-item:nth-child(odd):hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+}
